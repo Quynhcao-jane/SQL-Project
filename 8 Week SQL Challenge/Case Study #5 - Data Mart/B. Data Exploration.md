@@ -81,6 +81,7 @@ Here is a visualisation for this query:
 ![index1](https://user-images.githubusercontent.com/108384522/176493264-c8062387-f561-44b0-a654-0d8de0f081e3.png)
 
 We can see that the Oceania, Africa and Asia have the most total sales. The peak period is from Apr to Aug each year.
+
 **5. What is the total count of transactions for each platform?**
 
 ````sql
