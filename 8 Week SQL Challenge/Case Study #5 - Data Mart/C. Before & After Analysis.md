@@ -51,6 +51,16 @@ FROM changes_2
 
 Let's vsee the visualisation of sales for the period 4 weeks before and after:
 
+ ````sql
+SELECT week_number,SUM(sales) sales
+FROM clean_weekly_sales
+WHERE 
+  ((week_number BETWEEN 21 AND 24) AND(calendar_year = 2020)) OR 
+  ((week_number BETWEEN 25 AND 28) AND (calendar_year = 2020))
+GROUP BY week_number, calendar_year
+ORDER BY week_number
+````
+
 ![index](https://user-images.githubusercontent.com/108384522/176660286-96eeb38e-2f5f-419f-bb22-f1ac604f2a34.png)
 
 Since the new sustainable packaging came into effect, the sales has dropped by $26,884,188 at a negative 1.15%. The sales has dropped from week 25 and risen again from week 28. 
@@ -74,7 +84,7 @@ WITH changes AS (
 changes_2 AS (
   SELECT 
     SUM(CASE WHEN week_number BETWEEN 13 AND 24 THEN total_sales END) AS before_change,
-    SUM(CASE WHEN week_number BETWEEN 25 AND 37 THEN total_sales END) AS after_change
+    SUM(CASE WHEN week_number BETWEEN 25 AND 36 THEN total_sales END) AS after_change
   FROM changes)
 
 SELECT 
@@ -89,11 +99,7 @@ FROM changes_2
 
 <img width="582" alt="image" src="https://user-images.githubusercontent.com/81607668/131946233-45fa874e-0632-462d-9451-5ed4299b6183.png">
 
-Let's see the visuallization of of sales for the period 4 weeks before and after
-
-![index](https://user-images.githubusercontent.com/108384522/176661314-9bb62e81-f984-4181-89cc-eebe49bc91a9.png)
-
-Looks like the sales has gone down even more with a negative 2.14%!
+The sales has gone down with a negative 2.14%.
 
 ***
 
@@ -102,8 +108,6 @@ Looks like the sales has gone down even more with a negative 2.14%!
 I'm breaking down this question to 2 parts.
 
 **Part 1: How do the sale metrics for 4 weeks before and after compare with the previous years in 2018 and 2019?**
-- Basically, the question is asking us to find the sales variance between 4 weeks before and after `'2020-06-15'` for years 2018, 2019 and 2020. Perhaps we can find a pattern here.
-- We can apply the same solution as above and add `calendar_year` into the syntax. 
 
 ````sql
 WITH summary AS (
@@ -118,7 +122,7 @@ WITH summary AS (
 summary_2 AS (
   SELECT 
     calendar_year,
-    SUM(CASE WHEN week_number BETWEEN 13 AND 24 THEN total_sales END) AS before_sales,
+    SUM(CASE WHEN week_number BETWEEN 21 AND 24 THEN total_sales END) AS before_sales,
     SUM(CASE WHEN week_number BETWEEN 25 AND 28 THEN total_sales END) AS after_sales
   FROM summary
   GROUP BY calendar_year
@@ -137,11 +141,25 @@ FROM summary_2
 
 <img width="735" alt="image" src="https://user-images.githubusercontent.com/81607668/131950161-371052e1-ad8b-4fe7-a1a1-97b968416d1d.png">
 
-Let's a do some analysis with the results. 
+Let's take a look at the visualization of total sales 4 weeks before and after in each year.
 
-We can see that in previous years in 2018 and 2019, there's a sort of consistent increase in sales in week 25 to 28 at an average of 0.15%. 
+ ````sql
+SELECT 
+  calendar_year, 
+  week_number,
+  SUM(sales) sales
+FROM clean_weekly_sales
+WHERE 
+  (week_number BETWEEN 21 AND 24) OR 
+  (week_number BETWEEN 25 AND 28)
+GROUP BY calendar_year, week_number
+ORDER BY calendar_year, week_number
+````
 
-However, after the new packaging was implemented in 2020's week 25, there was a significant drop in sales at 1.15% and compared to the previous years, it's a reduction by 6.7%!
+![index](https://user-images.githubusercontent.com/108384522/176726243-6ebdb872-465c-47c0-b12f-c00b2bbe9960.png)
+
+In general, we can see that the total sales 4 weeks before and after in 2020 is higher than 2 years ago. 
+However, in 2018 and 2019 the total sales 4 weeks before and after tend to increase, and in 2020 it decreases by 1.15%. One of the times when 2020 sales fell sharply was week 25, when the packaging change was introduced.
 
 **Part 2: How do the sale metrics for 12 weeks before and after compare with the previous years in 2018 and 2019?**
 - Use the same solution above and change to week 13 to 24 for before and week 25 to 37 for after.
@@ -160,7 +178,7 @@ summary_2 AS (
   SELECT 
     calendar_year,
     SUM(CASE WHEN week_number BETWEEN 13 AND 24 THEN total_sales END) AS before_sales,
-    SUM(CASE WHEN week_number BETWEEN 25 AND 37 THEN total_sales END) AS after_sales
+    SUM(CASE WHEN week_number BETWEEN 25 AND 36 THEN total_sales END) AS after_sales
   FROM summary
   GROUP BY calendar_year
 )
@@ -178,9 +196,23 @@ FROM summary_2
 
 <img width="719" alt="image" src="https://user-images.githubusercontent.com/81607668/131950689-0241db95-6e4b-4b86-80cb-5cd2eada23cc.png">
 
+Let's take a look at the visualization of total sales 12 weeks before and after in each year.
+ ````sql
+SELECT 
+  calendar_year, 
+  week_number,
+  SUM(sales) sales
+FROM clean_weekly_sales
+WHERE 
+  (week_number BETWEEN 13 AND 24) OR 
+  (week_number BETWEEN 25 AND 36)
+GROUP BY calendar_year, week_number
+ORDER BY calendar_year, week_number
+````
 
+![index](https://user-images.githubusercontent.com/108384522/176727223-0bcd3a24-c987-4334-8e5b-cadc8f41b573.png)
 
-There was a fair bit of percentage differences in all 3 years. However, now when you compare the worst year to their best year in 2018, the sales percentage difference is even more stark at a difference of 3.77% (1.63% + 2.14%).
+Sales in 2018 tend to rise, in 2019 sales look like a plateau, and sales in 2020 are falling. Weeks 15, 17 and 32 in 2020 had less sales than the same weeks in 2019. Actually we can not say that the week 25 in 2020 was the worst one.
 
 ***
 
