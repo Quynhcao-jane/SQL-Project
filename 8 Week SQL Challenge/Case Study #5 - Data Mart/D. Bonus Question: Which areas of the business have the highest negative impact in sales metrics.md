@@ -255,6 +255,8 @@ GROUP BY
 Sales drop 3% in Guest has the highest negative impact in sales metrics performance in 2020. However, the change_in_sales of existing customers has dropped 83872973, more than guest customers.
 
 We can conclude that these areas of business had the highest negative impact in sales metrics performance in 2020: sales in Asia and Oceania, retail platform, Middle age and Families demographic group and guest customers. We can exclude the unknown values because we can't make decisions from this one.
-In general, packaging issues had a negative sales impact but it was not the only reason for decreasing sales in 2020. 
 
+In general, packaging issues had a negative sales impact but it was not the only reason for decreasing sales in 2020. Because when we look at the chart of 12 weeks before and after that, we can see there are some points the sales has dropped significantly than week 25 of 2020. Espacially in week 32, when the sales before that already increase but then drop deeply.
+ 
+![index](https://user-images.githubusercontent.com/108384522/176727223-0bcd3a24-c987-4334-8e5b-cadc8f41b573.png)
 
