@@ -1,4 +1,4 @@
-# Case Study #5: Data Mart
+# [Case Study #5: Data Mart](https://8weeksqlchallenge.com/case-study-5/)
 
 <img src="https://user-images.githubusercontent.com/81607668/131437982-fc087a4c-0b77-4714-907b-54e0420e7166.png" alt="Image" width="500" height="520">
 
@@ -10,7 +10,6 @@
   - [B. Data Exploration](#b-data-exploration)
   - [C. Before & After Analysis](#c-before--after-analysis)
   - [D. Bonus Question](#d-bonus-question)
-  - [Complete SQL Syntax]
 
 ***
 
