@@ -216,4 +216,4 @@ Sales in 2018 tend to rise, in 2019 sales look like a plateau, and sales in 2020
 
 ***
 
-Click [here](https://github.com/katiehuangx/8-Week-SQL-Challenge/blob/main/Case%20Study%20%235%20-%20Data%20Mart/D.%20Bonus%20Question.md) for **D. Bonus Question** solution! 🙌🏻
+Click [here](https://github.com/Quynhcao-jane/SQL-Project/blob/main/8%20Week%20SQL%20Challenge/Case%20Study%20%235%20-%20Data%20Mart/D.%20Bonus%20Question:%20Which%20areas%20of%20the%20business%20have%20the%20highest%20negative%20impact%20in%20sales%20metrics.md) for **D. Bonus Question** solution! 🙌🏻
