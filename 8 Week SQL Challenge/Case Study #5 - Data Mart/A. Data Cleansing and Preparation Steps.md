@@ -80,4 +80,4 @@ FROM weekly_sales
 
 ***
 
-Click [here](https://github.com/katiehuangx/8-Week-SQL-Challenge/blob/main/Case%20Study%20%235%20-%20Data%20Mart/B.%20Data%20Exploration.md) for **B. Data Exploration** solution!
+Click [here](https://github.com/Quynhcao-jane/SQL-Project/blob/main/8%20Week%20SQL%20Challenge/Case%20Study%20%235%20-%20Data%20Mart/B.%20Data%20Exploration.md) for **B. Data Exploration** solution!
