@@ -1,4 +1,5 @@
-This repository contains the solution for the 8 case studies in #8WeekSQLChallenge!
+This repository contains the solution for the 8 case studies in #8WeekSQLChallenge! [Link](https://8weeksqlchallenge.com/)
+
 Thanks @DataWithDanny for the excellent SQL case studies!
 
 | Name                                       | Description                                                                                                                                                                                                                                                                                                                                                                                                                                        | Status               |
@@ -9,4 +10,4 @@ Thanks @DataWithDanny for the excellent SQL case studies!
 
 Solved on MS SQL using various SQL techniques like conditional WHERE statements, data aggregation with GROUP BY and ordering with ORDER BY, CASE WHEN Statements, string transformations, regular expressions, datetime manipulation, common table expressions (CTE), subqueries and nested queries, complex table joins (Inner, Outer, Left, Right).
 
-Some cases include duplicate pre-processing, exploratory data analysis and summary statistics
+Some cases include duplicate pre-processing, exploratory data analysis and summary statistics.
