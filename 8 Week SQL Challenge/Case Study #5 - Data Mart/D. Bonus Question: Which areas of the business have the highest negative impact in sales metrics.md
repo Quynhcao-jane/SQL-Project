@@ -260,3 +260,12 @@ In general, packaging issues had a negative sales impact but it was not the only
  
 ![index](https://user-images.githubusercontent.com/108384522/176727223-0bcd3a24-c987-4334-8e5b-cadc8f41b573.png)
 
+**Do you have any further recommendations for Danny’s team at Data Mart or any interesting insights based off this analysis?**
+
+- Oceania, Africa and Asia have the most total sales.
+- The sales in retail is the primary platform
+- Demographic families and aged_band retirees contribute the most to Retail sales
+- Most of the areas of business have the highest negative impact in sales metrics performance in 2020 are the one with highest total sales
+- Focusing on new customer acquisition and retention could be another growth point for the company.
+
+Although Retirees and existing customers also have the highest total sales, the total sales doesn't change much in before and after packaging changing period. Next time, when Data Mart wants to make a change, they can make that change on this aged band and customer type, because this one seems stable.
