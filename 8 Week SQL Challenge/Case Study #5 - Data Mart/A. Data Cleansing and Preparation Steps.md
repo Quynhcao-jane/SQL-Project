@@ -46,8 +46,23 @@ _`*` represent new columns_
 **Answer:**
 
 ````sql
-ALTER TABLE clean_weekly_sales
-ALTER column sales float
+CREATE TABLE clean_weekly_sales
+(
+	week_date DATE, 
+	week_number INT, 
+	month_number INT, 
+	calendar_year INT, 
+	region VARCHAR(MAX), 
+	platform VARCHAR(MAX), 
+	segment VARCHAR(MAX), 
+	age_band VARCHAR(MAX), 
+	demographic VARCHAR(MAX), 
+	customer_type VARCHAR(MAX), 
+	transactions INT, 
+	sales INT, 
+	avg_transaction FLOAT
+)
+
 INSERT INTO clean_weekly_sales (week_date, week_number, month_number, calendar_year, region, platform, segment, age_band, demographic, customer_type, transactions, sales, avg_transaction)
 SELECT
 	CONVERT(DATETIME, week_date,3) as week_date,
@@ -74,6 +89,8 @@ SELECT
 	ROUND(CONVERT(float,sales)/CONVERT(float,transactions),2) AS avg_transactions 
 FROM weekly_sales
 
+ALTER TABLE clean_weekly_sales
+ALTER column sales float
 ````
 
 <img width="1148" alt="image" src="https://user-images.githubusercontent.com/81607668/131474035-528e0af6-d848-427b-bbd9-73956a775f86.png">
